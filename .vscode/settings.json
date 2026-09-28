@@ -8,6 +8,9 @@
             }
         ]
     },
+    "prettier.disableLanguages": [
+        "markdown"
+    ],
     "markdownlint.config": {
         "MD035": {
             "style": "***"
