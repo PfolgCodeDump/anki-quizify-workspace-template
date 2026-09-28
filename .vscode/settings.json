@@ -16,6 +16,7 @@
             "style": "***"
         }
     },
+    "files.trimTrailingWhitespace": true,
     "[markdown]": {
         "editor.formatOnSave": false
     },
