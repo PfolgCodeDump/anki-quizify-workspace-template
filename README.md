@@ -47,6 +47,12 @@ code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension fabiospampinato.vscode-highlight
 ```
 
+> [!WARNING]
+>
+> ### 与 Prettier 的冲突
+>
+> Prettier 会把 Markdown 中的 `***` 自动改写为 `---`，这会破坏 Quizify 的卡片正反面分隔符，导致导入报错。
+
 ## 使用方式
 
 1. 克隆仓库：
