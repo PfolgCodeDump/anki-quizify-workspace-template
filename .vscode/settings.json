@@ -1,0 +1,186 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.md$",
+                "cmd": "py scripts/format.py ${file}",
+                "isAsync": true
+            }
+        ]
+    },
+    "markdownlint.config": {
+        "MD035": {
+            "style": "***"
+        }
+    },
+    "[markdown]": {
+        "editor.formatOnSave": false
+    },
+    "highlight.regexes": {
+        "^(---)$": {
+            "regexFlags": "gm",
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#FF79C6",
+                    "fontWeight": "bold",
+                    "backgroundColor": "#FF79C622"
+                }
+            ]
+        },
+        "^(\\+\\+\\+)$": {
+            "regexFlags": "gm",
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#FF79C6",
+                    "fontWeight": "bold",
+                    "backgroundColor": "#FF79C622"
+                }
+            ]
+        },
+        "^(#{1,6}\\s.+)$": {
+            "regexFlags": "gm",
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#8BE9FD",
+                    "fontWeight": "bold"
+                }
+            ]
+        },
+        "^(\\s*[a-zA-Z_]+)(:)$": {
+            "regexFlags": "gm",
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#F1FA8C"
+                },
+                {
+                    "color": "#FF79C6"
+                }
+            ]
+        },
+        "(\\{\\{[^{}\\n]*\\}\\})": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#C678DD",
+                    "fontWeight": "bold"
+                }
+            ]
+        },
+        "(;;;[\\s\\S]*?;;;[A-Z]+)": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#61AFEF"
+                }
+            ]
+        },
+        "(\\[\\[[^\\]\\n]*?\\|\\|[^\\]\\n]*?\\]\\])": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#E5C07B"
+                }
+            ]
+        },
+        "(\\[[^\\[\\]\\n]+\\]\\^\\([^()\\n]+\\)\\^)": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#56B6C2",
+                    "fontStyle": "italic"
+                }
+            ]
+        },
+        "^(::::?\\s+.+)$": {
+            "regexFlags": "gm",
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#ABB2BF",
+                    "fontWeight": "bold"
+                }
+            ]
+        },
+        "^(::::?)$": {
+            "regexFlags": "gm",
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#ABB2BF",
+                    "fontWeight": "bold"
+                }
+            ]
+        },
+        "(===[^=\\n]+===)": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#56B6C2",
+                    "fontWeight": "bold"
+                }
+            ]
+        },
+        "(!audio\\[[^\\]\\n]*\\]\\([^)\\n]*\\))": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#C678DD"
+                }
+            ]
+        },
+        "(==[^=\\n]+==)": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#E06C75",
+                    "fontWeight": "bold"
+                }
+            ]
+        },
+        "(\\^[^\\^\\n]+\\^)": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#98C379"
+                }
+            ]
+        },
+        "(~[^~\\n]+~)": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#98C379"
+                }
+            ]
+        },
+        "(>[ \\t]*\\[![A-Z]+\\])": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#D19A66",
+                    "fontWeight": "bold"
+                }
+            ]
+        },
+        "(\\$\\$[\\s\\S]*?\\$\\$)": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#E5C07B"
+                }
+            ]
+        },
+        "(\\$[^$\\n]+\\$)": {
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#E5C07B"
+                }
+            ]
+        }
+    }
+}

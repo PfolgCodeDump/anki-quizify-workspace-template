@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "emeraldwalk.RunOnSave",
+        "DavidAnson.vscode-markdownlint",
+        "fabiospampinato.vscode-highlight",
+    ],
+}
