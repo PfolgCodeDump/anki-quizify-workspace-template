@@ -43,6 +43,17 @@
                 }
             ]
         },
+        "^(\\*\\*\\*)$": {
+            "regexFlags": "gm",
+            "filterLanguageRegex": "markdown",
+            "decorations": [
+                {
+                    "color": "#ccb4a3",
+                    "fontWeight": "bold",
+                    "backgroundColor": "#FF79C622"
+                }
+            ]
+        },
         "^(#{1,6}\\s.+)$": {
             "regexFlags": "gm",
             "filterLanguageRegex": "markdown",
