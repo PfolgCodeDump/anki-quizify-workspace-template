@@ -13,13 +13,16 @@ FRONT_BACK_RE = re.compile(r'^[ \t]*\*\*\*[ \t]*$')
 def normalize_letters(s):
     return s.translate(str.maketrans('ＡＢＣＤ', 'ABCD'))
 
-
 def transform_body(text):
+    # 全角字母 A-D 转半角
     text = text.translate(str.maketrans('ＡＢＣＤ', 'ABCD'))
+    # 选项标号统一：A．/A、 -> A.
     text = re.sub(r'([A-D])[．、]', r'\1.', text)
-    text = re.sub(r'[ \t]+(?=[A-D][.])', '\n', text)
-    return text
-
+    # 把所有空白（换行/空行/制表符）压成单空格
+    text = re.sub(r'\s+', ' ', text).strip()
+    # 关键：用消费式正则，把 A. / B. / C. / D. 连同前面的空白一起替换成 \nX.
+    text = re.sub(r'\s*([A-D])\.', r'\n\1.', text)
+    return text.strip('\n')
 
 def process_choices(lines):
     out = []
@@ -43,13 +46,11 @@ def process_choices(lines):
                     break
                 if START_RE.match(cur):
                     break
-                if cur.strip() == '':
-                    j += 1
-                    break
+                # 关键：不再遇到空行就 break，继续收集直到 ;;; 或 ;;;答案
                 body_lines.append(cur)
                 j += 1
 
-            body_text = ''.join(body_lines).rstrip('\n')
+            body_text = ''.join(body_lines)
             if not body_text.strip() and not answer:
                 i = j
                 continue
@@ -57,7 +58,8 @@ def process_choices(lines):
             total += 1
             body_text = transform_body(body_text)
             out.append(';;;\n')
-            out.append(body_text + '\n')
+            if body_text:
+                out.append(body_text + '\n')
             if answer:
                 out.append(f';;;{normalize_letters(answer)}\n')
                 filled += 1
