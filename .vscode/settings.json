@@ -2,9 +2,15 @@
     "emeraldwalk.runonsave": {
         "commands": [
             {
-                "match": "\\.md$",
+                // Run whenever any file is saved
+                "match": ".*",
+                "cmd": "echo '${fileBasename}' saved.",
+            },
+            {
+                "match": "\\.[mM][dD]$",
                 "cmd": "py scripts/format.py ${file}",
-                "isAsync": true
+                "isAsync": true,
+                "autoShowOutputPanel": "always"
             }
         ]
     },
