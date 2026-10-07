@@ -10,7 +10,7 @@
                 "match": "\\.[mM][dD]$",
                 "cmd": "py scripts/format.py ${file}",
                 "isAsync": true,
-                "autoShowOutputPanel": "always"
+                "autoShowOutputPanel": "error"
             }
         ]
     },
